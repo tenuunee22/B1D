@@ -7,27 +7,27 @@
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #f5f7fa;
-  color: #444;
+  background-color: #181818; /* Dark background */
+  color: #e0e0e0; /* Light text color */
   line-height: 1.6;
   padding: 30px;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Changed to allow scrolling */
+  align-items: flex-start;
   min-height: 100vh;
-  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-y: auto;
 }
 
 /* Root for custom properties (CSS variables) */
 :root {
-  --primary-color: #6e7dff;
-  --secondary-color: #8a96ff;
-  --accent-color: #f7c02f;
-  --background-color: #ffffff;
-  --box-shadow: rgba(0, 0, 0, 0.1);
-  --text-color: #444;
-  --dark-text-color: #222;
-  --input-border-color: #ddd;
+  --primary-color: #444444; /* Dark grey */
+  --secondary-color: #333333; /* Darker grey */
+  --accent-color: #f7c02f; /* Bright accent color */
+  --background-color: #222222; /* Dark background for content */
+  --box-shadow: rgba(0, 0, 0, 0.5); /* Stronger shadow for contrast */
+  --text-color: #e0e0e0; /* Light grey text */
+  --dark-text-color: #bbb; /* Slightly darker grey for less emphasis */
+  --input-border-color: #444;
   --input-focus-color: #6e7dff;
 }
 
@@ -48,7 +48,7 @@ body {
 
 /* Header Styling */
 #headsection {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, #333333, #444444); /* Dark gradient */
   color: #fff;
   text-align: center;
   padding: 40px 20px;
@@ -104,14 +104,14 @@ body {
 /* Text Section */
 #textsection {
   padding: 40px;
-  background-color: #fff;
+  background-color: var(--secondary-color); /* Darker background */
   border-radius: 12px;
   box-shadow: 0 4px 12px var(--box-shadow);
 }
 
 #textsection h2 {
   font-size: 2.2em;
-  color: var(--primary-color);
+  color: var(--accent-color); /* Accent color for titles */
   margin-bottom: 20px;
   font-weight: 600;
   text-align: center;
@@ -120,7 +120,7 @@ body {
 #textsection p,
 #textsection address {
   font-size: 1.2em;
-  color: var(--dark-text-color);
+  color: var(--dark-text-color); /* Slightly darker text */
   margin-bottom: 20px;
   line-height: 1.8;
 }
@@ -158,8 +158,8 @@ video:hover {
 #footsection {
   text-align: center;
   padding: 20px;
-  background: #333;
-  color: #fff;
+  background: #222222; /* Dark footer */
+  color: #bbb; /* Light grey text */
   margin-top: 40px;
   border-radius: 0 0 15px 15px;
 }
@@ -175,7 +175,7 @@ form label {
   margin: 15px 0 5px;
   font-weight: 600;
   font-size: 1.2em;
-  color: var(--text-color);
+  color: var(--text-color); /* Light color for labels */
 }
 
 form input[type="text"],
@@ -187,6 +187,8 @@ form textarea {
   border: 1px solid var(--input-border-color);
   border-radius: 8px;
   margin-bottom: 20px;
+  background-color: #333; /* Dark input background */
+  color: #e0e0e0; /* Light text inside inputs */
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -210,5 +212,82 @@ form textarea {
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Mobile-first Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 20px; /* Reduced padding for mobile */
+  }
+
+  #wrapper {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #headsection h1 {
+    font-size: 2em; /* Smaller heading */
+  }
+
+  #navisection ul {
+    flex-direction: column; /* Stack the navigation links vertically */
+  }
+
+  #navisection ul li {
+    margin-bottom: 15px;
+  }
+
+  #textsection h2 {
+    font-size: 1.8em; /* Smaller heading */
+  }
+
+  video {
+    max-width: 100%;
+  }
+
+  #textsection img {
+    max-width: 100%;
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    font-size: 1em; /* Smaller font size for inputs */
+    padding: 15px; /* Smaller padding */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 10px; /* More padding reduction for very small screens */
+  }
+
+  #wrapper {
+    width: 100%;
+    padding: 15px;
+  }
+
+  #headsection h1 {
+    font-size: 1.5em; /* Even smaller heading */
+  }
+
+  #navisection ul {
+    gap: 15px; /* Smaller gap between menu items */
+  }
+
+  #navisection ul li {
+    font-size: 1em; /* Smaller font size for mobile */
+  }
+
+  #textsection h2 {
+    font-size: 1.6em; /* Smaller subheading */
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    font-size: 0.9em; /* Even smaller font size */
+    padding: 12px; /* Even smaller padding */
   }
 }
