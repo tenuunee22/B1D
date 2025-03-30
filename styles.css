@@ -1,0 +1,214 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f5f7fa;
+  color: #444;
+  line-height: 1.6;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Changed to allow scrolling */
+  min-height: 100vh;
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Root for custom properties (CSS variables) */
+:root {
+  --primary-color: #6e7dff;
+  --secondary-color: #8a96ff;
+  --accent-color: #f7c02f;
+  --background-color: #ffffff;
+  --box-shadow: rgba(0, 0, 0, 0.1);
+  --text-color: #444;
+  --dark-text-color: #222;
+  --input-border-color: #ddd;
+  --input-focus-color: #6e7dff;
+}
+
+/* Wrapper styling */
+#wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: var(--background-color);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px var(--box-shadow);
+  animation: fadeIn 1s ease-out;
+}
+
+/* Header Styling */
+#headsection {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+  box-shadow: 0 4px 12px var(--box-shadow);
+}
+
+#headsection h1 {
+  font-size: 3em;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+#club-logo {
+  width: 120px;
+  height: auto;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+/* Navigation Section */
+#navisection {
+  text-align: center;
+  margin: 25px 0;
+  padding: 15px 0;
+  background: var(--primary-color);
+  border-radius: 8px;
+}
+
+#navisection ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+#navisection ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#navisection ul li a:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Text Section */
+#textsection {
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--box-shadow);
+}
+
+#textsection h2 {
+  font-size: 2.2em;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+#textsection p,
+#textsection address {
+  font-size: 1.2em;
+  color: var(--dark-text-color);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+video {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--box-shadow);
+  transition: transform 0.3s ease;
+}
+
+video:hover {
+  transform: scale(1.05);
+}
+
+#textsection img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--box-shadow);
+  transition: transform 0.3s ease;
+}
+
+#textsection img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer Section */
+#footsection {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: #fff;
+  margin-top: 40px;
+  border-radius: 0 0 15px 15px;
+}
+
+#footsection address {
+  font-style: normal;
+  font-size: 1em;
+}
+
+/* Form Styling */
+form label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: var(--text-color);
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 18px;
+  font-size: 1.2em;
+  border: 1px solid var(--input-border-color);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  border-color: var(--input-focus-color);
+  box-shadow: 0 0 8px var(--input-focus-color);
+  outline: none;
+}
+
+form textarea {
+  height: 180px;
+  resize: vertical;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
